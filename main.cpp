@@ -1,7 +1,11 @@
 #include "product.h"
 #include "validator.h"
+#include "savedata.h"
+#include <iostream>
 
 int main(){
+    loadFromFile(products);
+
     do {
         displayMenu();
         int choice = getInt("Enter your choice: ");
@@ -12,7 +16,7 @@ int main(){
             case 3: displayProducts(); break;
             case 4: searchProduct(); break;
             case 5: removeProduct(); break;
-            case 6: return 0;
+            case 6: saveToFile(products); return 0;
         }
     } while(true);
 }
